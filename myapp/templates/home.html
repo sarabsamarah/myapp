@@ -31,7 +31,7 @@
     
 <body> 
     {% block content %}
-    <h1>Poses</h1>
+    <!-- <h1>Pose Database</h1>
 <table border="1" width="600">
 <tr>
 <td>Name</td>
@@ -46,7 +46,7 @@
 <td>{{ Pose.email }}</td>
 </tr>
 {% endfor %}
-</table>
+</table> -->
     <div id="grid">
  
     
@@ -85,6 +85,22 @@
                 </tbody>
             </thead>
         </table>
+        <h1>Pose Database</h1>
+<table border="1" width="600">
+<tr>
+<td>Name</td>
+<td>Category</td>
+<td>eMail</td>
+</tr>
+
+{% for Pose in allPoses %}
+<tr>
+<td>{{ Pose.name }}</td>
+<td>{{ Pose.category }}</td>
+<td>{{ Pose.email }}</td>
+</tr>
+{% endfor %}
+</table>
         </div>
     <div class="footer">Sarab Samarah RYS 200 </div>
     {% endblock %}
