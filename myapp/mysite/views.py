@@ -4,16 +4,17 @@ from django.shortcuts import render
 # from django.http import HttpResponse
 from .models import Pose
 
-def index(request):
+def home(request):
 
-     return render(request, "index.html")
+     return render(request, "home.html")
 
 
 def showpose(request):
-    print(Pose)
+    # print(Pose)
     allPoses = Pose.objects.all()
+    print(allPoses)
     context = {'allPoses': allPoses}
-    return render(request, 'mysite/home.html',context)
+    return render(request, 'home.html',context)
 
 
 # def name(request, pose_id):
