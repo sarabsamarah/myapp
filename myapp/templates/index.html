@@ -18,21 +18,35 @@
    
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <link rel="stylesheet" type= "text/css" href= {% static '/style.css' %}/>
+
     <title>Responsive Website</title>
-    <link rel="stylesheet" type= "text/css" href= {% static '/css/style.css' %}/>
     <ul class= "sidenav">
 
-        <li><a class="active" href=#home>Home</a></li>
-        <li><a href="#sequence">Sequence Library</a></li>
-        <li><a href="schedule">Schedule</a> </li>
-        <li><a href="#book">Book</a></li>
-        <li><a href="#about">About</a></li>
+        <li><a href={% url 'login' %}>Home</a></li>
+
     </ul> 
     
 </head>
     
 <body> 
+    {% block content %} {% endblock %}
+    <h1>Poses</h1>
+<table border="1" width="600">
+<tr>
+<td>Name</td>
+<td>Category</td>
+<td>eMail</td>
+</tr>
+
+{% for Pose in allposes %}
+<tr>
+<td>{{ pose.name }}</td>
+<td>{{ pose.category }}</td>
+<td>{{ pose.email }}</td>
+</tr>
+{% endfor %}
+</table>
     <div id="grid">
  
     
@@ -75,4 +89,4 @@
     <div class="footer">Sarab Samarah RYS 200 </div>
     
 </body>
-</html>
+</html
